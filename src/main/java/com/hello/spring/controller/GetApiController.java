@@ -9,7 +9,7 @@ import java.util.Map;
 public class GetApiController {
 
     @GetMapping(path = "/hello") // http://localhost:8080/api/get/hello 맵핑
-    public String Hello() {
+    public String Hello() { // 함수 생성
         return "get Hello";
     }
 
@@ -24,7 +24,7 @@ public class GetApiController {
 
     /* Path Variable 변화하는 값 받기
        http://localhost:8080/api/get/path-variable/{name} */
-    @GetMapping("/path-variable/{name}") // 계속 변하는값 함수 생성
+    @GetMapping("/path-variable/{name}") // 계속 변하는 값 함수 생성
     //public String PathVariable(@PathVariable String Name){ // 변수 이름은 GetMapping에 기재한 이름과 동일해야 함
     public String PathVariable(@PathVariable(name = "name") String pathName) {
         // GetMapping에는 name으로 설정했지만 변수 이름은 다르게 설정해야할 때 name옵션 사용
@@ -47,7 +47,7 @@ public class GetApiController {
        http://localhost:8080/api/get/query-param?user=steve&email=steve@gmail.com&age=30 */
     @GetMapping(path = "query-param")
     public String queryParam(@RequestParam Map<String, String> queryParam) {
-        // Map으로 받을때는 뭐가 들어올지몰라서 뭐든 받을 수 있다.
+        // Map으로 받을때는 뭐가 들어올지몰라서 무엇이든 받을 수 있다.
         // 코딩할때 key를 하나씩 생성해야하는 불편한 점 발생
 
         StringBuilder sb = new StringBuilder();
