@@ -1,13 +1,11 @@
 package com.hello.spring.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
-@JsonInclude(JsonInclude.Include.NON_NULL) // 리소스를 받을 때 null값 포함하지 않음
+@JsonInclude(JsonInclude.Include.NON_NULL) // 리소스를 받을 때 null값 제외 (json받을때 null값은 빠지고 값이 있는것들만 표시된다, 규격 정할 때 규격서에 명시)
 public class User {
 
     private String name;

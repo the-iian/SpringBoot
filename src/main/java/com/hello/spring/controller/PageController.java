@@ -17,6 +17,7 @@ public class PageController {
     }
 
     // ResponseEntity
+    // RestAPI를 주로 사용해서 따로 page controller는 잘 사용하지않지만, 혹시나 내려야한다고하면 사용하는 방식
     @ResponseBody
     @GetMapping("/user") // http://localhost:8080/user
     public User user(){
