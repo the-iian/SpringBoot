@@ -1,5 +1,6 @@
 package com.hello.spring.controller;
 
+import com.hello.spring.annotation.Timer;
 import com.hello.spring.dto.Member;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,5 +27,14 @@ public class RestApiController {
 
         return member;
 
+    }
+
+
+    @Timer // 직접 만든 어노테이션
+    @DeleteMapping("/delete")
+    public void delete() throws InterruptedException {
+
+        // 삭제시 db logic 약 2초가 걸린다고 가정
+        Thread.sleep(1000 * 2);
     }
 }
