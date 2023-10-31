@@ -22,7 +22,7 @@ public class PostApiController {
 //        });
 //    }
 
-    @PostMapping("/post")
+    @PostMapping("/post") // http://localhost:8080/api/post
     public void post(@RequestBody PostRequestDto requestData){
         // Post로 맵핑하는 데이터는 RequestBody 어노테이션 명시, RequestDto 객체 생성 필요
 

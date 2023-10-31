@@ -13,6 +13,7 @@ public class GetApiController {
         return "get Hello";
     }
 
+
     // 구버전
     // @RequestMapping("/hi") // get, post, put, delete 모든 메서드가 동작한다
     @RequestMapping(path = "/hi", method = RequestMethod.GET) // 속성 get지정, http://localhost:8080/api/get/hi
@@ -42,10 +43,8 @@ public class GetApiController {
        무한정에 어떤 인자값이 들어올지 모를 때 사용
 
        key+value로 이루어져있고, 다음 key+value가 오기위해선 & 연산자 필요하다
-       ?key=value&key2=value2 형식
-
-       http://localhost:8080/api/get/query-param?user=steve&email=steve@gmail.com&age=30 */
-    @GetMapping(path = "query-param")
+       ?key=value&key2=value2 형식 */
+    @GetMapping(path = "query-param") // http://localhost:8080/api/get/query-param?user=steve&email=steve@gmail.com&age=30
     public String queryParam(@RequestParam Map<String, String> queryParam) {
         // Map으로 받을때는 뭐가 들어올지몰라서 무엇이든 받을 수 있다.
         // 코딩할때 key를 하나씩 생성해야하는 불편한 점 발생
@@ -85,7 +84,6 @@ public class GetApiController {
     /* 3. 객체를 만들어서 query Parameter가 바로 맵핑하는 방법
           변수가 계속 늘어남에따라 일일이 requesyParam을 명시하지않고, DTO 형태로 맵핑
           (현업에서 가장 많이 사용, 추천 방법) dto>UserRequest */
-
     @GetMapping("query-param03")
     public String queryParam03(UserRequest userRequest) {
 
