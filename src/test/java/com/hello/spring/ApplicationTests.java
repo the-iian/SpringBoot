@@ -18,7 +18,7 @@ class ApplicationTests {
     void contextLoads() throws JsonProcessingException {
         System.out.println("---------");
 
-        // Test JSON > Object
+        // Text JSON > Object
         // Object > Text JSON
 
         // controller req json(text) > object
@@ -37,5 +37,5 @@ class ApplicationTests {
         var objectUser = objectMapper.readValue(text, User.class);
         System.out.println(objectUser);
 
-    }
+     }
 }

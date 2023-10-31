@@ -2,7 +2,7 @@ package com.hello.spring;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class User {
+public class User { // Object Mapper 동작 방식
 
     private String name;
     private int age;

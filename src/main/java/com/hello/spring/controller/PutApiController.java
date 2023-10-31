@@ -1,6 +1,5 @@
 package com.hello.spring.controller;
 
-import com.hello.spring.dto.PostRequestDto;
 import com.hello.spring.dto.PutRequestDto;
 import org.springframework.web.bind.annotation.*;
 
