@@ -40,7 +40,7 @@ public class ApiController {
        ResponseEntity를 통해 명확하게 답을 내려서 받는걸 가장 권장하는 방법
 
        ResponseEntity 구조 - HttpStatus, HttpHeaders, HttpBody */
-    @PutMapping("/put") // http://localhost:8080/api/put
+    @PutMapping("/put2") // http://localhost:8080/api/put
     public ResponseEntity<User> put(@RequestBody User user){
 
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
