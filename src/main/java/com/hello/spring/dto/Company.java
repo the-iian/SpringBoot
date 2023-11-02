@@ -11,7 +11,7 @@ public class Company {
     @Email // Validation:이메일 양식에 맞지않으면 에러 (validation 사용시 정규식하지않아도 됨)
     private String email;
 
-    @Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$")
+    @Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$") // 핸드폰번호 정규식
     private String phoneNumber;
 
     private int age;
