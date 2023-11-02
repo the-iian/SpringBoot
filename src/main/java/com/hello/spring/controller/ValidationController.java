@@ -16,6 +16,7 @@ import javax.validation.Valid;
 @RequestMapping("/api")
 public class ValidationController {
 
+    // controller단에서 validation 방법
     @PostMapping("/company") // http://localhost:8080/api/company
     public ResponseEntity company(@Valid @RequestBody Company company, BindingResult bindingResult){ // Validation이 붙은 객체는 내부를 검증함
 
