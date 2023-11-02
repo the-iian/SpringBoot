@@ -1,19 +1,20 @@
 package com.hello.spring.dto;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 
 public class Company {
 
+    @NotBlank // 띄어쓰기+공백 허용안함
     private String ename;
     private String job;
 
     @Email // Validation:이메일 양식에 맞지않으면 에러 (validation 사용시 정규식하지않아도 됨)
     private String email;
 
-    @Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$") // 핸드폰번호 정규식
+    @Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$", message = "핸드폰번호의 양식과 맞지않습니다. 01x-xxxx-xxxx") // 핸드폰번호 정규식
     private String phoneNumber;
 
+    @Max(value = 90) // 최대값
     private int age;
 
     public String getEname() {
